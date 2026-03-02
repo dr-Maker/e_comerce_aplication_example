@@ -7,7 +7,11 @@ var UserSchema = new schema({
     email: {type: String, required: true, unique: true},
     password: {type: String, required: true},
     createdAt: {type: Date, default: Date.now},
-    rol : {type: String, enum: ['user', 'admin'], default: 'user'}      
+    rol : {type: String, enum: ['user', 'admin'], default: 'user'} 
+},
+{
+    timestamps: true,
+    collection: 'Users'
 });
 
 module.exports = mongoose.model("Users", UserSchema);
